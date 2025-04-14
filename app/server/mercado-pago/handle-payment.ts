@@ -1,6 +1,7 @@
 import "server-only";
 
 import { PaymentResponse } from "mercadopago/dist/clients/payment/commonTypes";
+import { redirect } from "next/navigation";
 
 export async function handleMercadoPagoPayment(paymentData: PaymentResponse) {
   const metadata = paymentData.metadata;
@@ -8,6 +9,7 @@ export async function handleMercadoPagoPayment(paymentData: PaymentResponse) {
   const testeId = metadata.teste_id; // Os metadados do Mercado Pago são convertidos para snake_case
 
   // Faz alguma ação aqui - manda email pro usuario, libera acesso, erc.
+  redirect("/")
 
   return;
 }
