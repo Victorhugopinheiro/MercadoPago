@@ -29,30 +29,29 @@ export async function POST(req: NextRequest) {
             description: "Descrição do produto",
             title: "Nome do produto",
             quantity: 1,
-            unit_price: 0.99,
+            unit_price: 0.10,
             currency_id: "BRL",
             category_id: "category", // Recomendado inserir, mesmo que não tenha categoria - Aumenta a pontuação da sua integração com o Mercado Pago
           },
         ],
         payment_methods: {
           // Descomente para desativar métodos de pagamento
-             excluded_payment_methods: [
-               {
-                id: "bolbradesco",
-               },
-               {
-                 id: "pec",
-               },
-             ],
-             excluded_payment_types: [
-               {
-                id: "debit_card",
-              },
-               {
-                 id: "credit_card",
-                 
-               },
-             ],
+          //   excluded_payment_methods: [
+          //     {
+          //       id: "bolbradesco",
+          //     },
+          //     {
+          //       id: "pec",
+          //     },
+          //   ],
+          //   excluded_payment_types: [
+          //     {
+          //       id: "debit_card",
+          //     },
+          //     {
+          //       id: "credit_card",
+          //     },
+          //   ],
           installments: 12, // Número máximo de parcelas permitidas - calculo feito automaticamente
         },
         auto_return: "approved",
